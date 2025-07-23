@@ -25,7 +25,9 @@ class CartActivity : AppCompatActivity() {
 
         cartRecyclerView.layoutManager = LinearLayoutManager(this)
         cartAdapter = CartAdapter(cartItems)
-        cartRecyclerView.adapter = cartAdapter
+        cartRecyclerView.adapter = cartAdapter 
+        import android.widget.Button
+import android.content.Intent
 
         updateTotal()
     }
@@ -33,5 +35,10 @@ class CartActivity : AppCompatActivity() {
     private fun updateTotal() {
         val total = cartItems.sumOf { it.product.price * it.quantity }
         totalTextView.text = "Total: $${"%.2f".format(total)}"
-    }
+        (val viewCartButton = findViewById<Button>(R.id.viewCartButton)
+viewCartButton.setOnClickListener {
+    val intent = Intent(this, CartActivity::class.java)
+    startActivity(intent)
 }
+    }
+})
