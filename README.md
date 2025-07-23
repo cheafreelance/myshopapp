@@ -1,11 +1,7 @@
 package com.chea.myshopapp
 
-import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
-
-class MainActivity : AppCompatActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-    }
-}
+data class Product(
+    val name: String,
+    val price: Double,
+    val imageResId: Int
+)
