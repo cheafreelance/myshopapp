@@ -20,11 +20,14 @@ jobs:
           distribution: 'temurin'
           java-version: 17
 
-      - name: Make gradlew executable
+      - name: Grant execute permission to gradlew
         run: chmod +x ./gradlew
 
-      - name: Build Debug APK
-        run: ./gradlew assembleDebug
+      - name: Clean and Build APK
+        run: ./gradlew clean assembleDebug
+
+      - name: List APKs
+        run: ls -R app/build/outputs/
 
       - name: Upload APK
         uses: actions/upload-artifact@v3
