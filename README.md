@@ -1,7 +1,10 @@
-package com.chea.myshopapp
-
-data class Product(
-    val name: String,
-    val price: Double,
-    val imageResId: Int
-)
+myshopapp/
+├── app/
+│   └── src/
+│       └── main/
+│           ├── AndroidManifest.xml
+│           └── java/
+│           └── res/
+├── build.gradle
+├── gradlew
+├── settings.gradle
